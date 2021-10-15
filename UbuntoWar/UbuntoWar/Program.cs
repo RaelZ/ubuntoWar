@@ -67,7 +67,6 @@ namespace UbuntoWar
 
                         Console.WriteLine($"Perfeito {player.getNome()}, iremos iniciar o jogo!");
                         count = 0;
-                        jogadorAtual++;
 
                         // For para contagem de portas
                         for (int i = 0; i < 5; i++)
@@ -210,6 +209,8 @@ namespace UbuntoWar
                                     break;
                             }
                         }
+                        jogador.Add(++jogadorAtual, player.getNome() + ", " + player.getIdade() + ", " + player.getSexo());
+                        jogadores.Add(player);
                         break;
 
                     case "2":
@@ -224,8 +225,6 @@ namespace UbuntoWar
                         Console.WriteLine("Resposta inválida!");
                         break;
                 }
-                jogadores.Add(player);
-                jogador.Add(jogadorAtual, player.getNome() + ", " + player.getIdade() + ", " + player.getSexo());
             };
 
             foreach (object i in jogador)
