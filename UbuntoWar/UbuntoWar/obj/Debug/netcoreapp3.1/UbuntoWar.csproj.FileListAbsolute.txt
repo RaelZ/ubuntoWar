@@ -1,0 +1,14 @@
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\UbuntoWar.exe
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\UbuntoWar.deps.json
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\UbuntoWar.runtimeconfig.json
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\UbuntoWar.runtimeconfig.dev.json
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\UbuntoWar.dll
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\UbuntoWar.pdb
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.csproj.AssemblyReference.cache
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.GeneratedMSBuildEditorConfig.editorconfig
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.AssemblyInfoInputs.cache
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.AssemblyInfo.cs
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.csproj.CoreCompileInputs.cache
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.dll
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.pdb
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.genruntimeconfig.cache
