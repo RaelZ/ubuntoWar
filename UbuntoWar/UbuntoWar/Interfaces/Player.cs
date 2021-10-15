@@ -7,7 +7,7 @@ namespace UbuntoWar.Interfaces
     interface IPlayer
     {
         void setNome(string nome);
-        void setIdade(int idade);
+        void setIdade(string idade);
         void setSexo(string sexo);
     }
 }

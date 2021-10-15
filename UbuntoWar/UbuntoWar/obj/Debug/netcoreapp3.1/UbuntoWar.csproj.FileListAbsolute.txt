@@ -12,3 +12,6 @@ D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.
 D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.dll
 D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.pdb
 D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.genruntimeconfig.cache
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\bin\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\Interop.Microsoft.Office.Interop.Excel.dll
+D:\qodless\Ubunto\ubuntoWar\ubuntoWar\UbuntoWar\UbuntoWar\obj\Debug\netcoreapp3.1\UbuntoWar.csproj.ResolveComReference.cache
