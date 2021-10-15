@@ -18,23 +18,24 @@ namespace UbuntoWar
 
             // Declaração das entidades
             Comandos comandos = new Comandos();
-            Jogador player = new Jogador();
             Porta porta = new Porta();
 
             // Variáveis utilizadas
-            var jogadorAtual = 1;
+            var jogadorAtual = 0;
             var count = 0; // Contador de portas
             var avanco = 0; // Contador de portas corretas
             var portaEscolhida = ""; // Porta escolhida pelo jogador
             var proximaporta = comandos.sortPorta(); // Gerador de números aleatorios
-
-            Console.WriteLine("Deseja participar do jogo?\n(1-Sim/2-Não)");
-            comandos.setInicio(Console.ReadLine());
+            comandos.setInicio("Sim");
 
             // Looping para iniciar o jogo
-            do
+            while (comandos.getInicio() != "Não")
             {
+                Jogador player = new Jogador();
+                Console.WriteLine("Deseja participar do jogo?\n(1-Sim/2-Não)");
+                comandos.setInicio(Console.ReadLine());
                 Console.Clear();
+
                 // Switch case Menu
                 switch (comandos.getInicio())
                 {
@@ -86,10 +87,10 @@ namespace UbuntoWar
                             {
                                 proximaporta = comandos.sortPorta();
                                 // Descomente para visualizar as respostas
-                                for (int n = 0; n < 3; n++)
-                                {
-                                    Console.WriteLine(proximaporta[n]);
-                                }
+                                //for (int n = 0; n < 3; n++)
+                                //{
+                                //    Console.WriteLine(proximaporta[n]);
+                                //}
                                 portaEscolhida = Console.ReadLine();
                                 Console.Clear();
 
@@ -131,6 +132,22 @@ namespace UbuntoWar
                             switch (avanco)
                             {
                                 case 1:
+                                    if (i == 1)
+                                    {
+                                        player.setPorta1("Passou");
+                                    }
+                                    if (i == 2)
+                                    {
+                                        player.setPorta2("Passou");
+                                    }
+                                    if (i == 3)
+                                    {
+                                        player.setPorta3("Passou");
+                                    }
+                                    if (i == 4)
+                                    {
+                                        player.setPorta4("Passou");
+                                    }
                                     ++count;
                                     Console.WriteLine("Parabéns! Você avançou para próxima etapa!");
                                     Console.ReadLine();
@@ -139,7 +156,6 @@ namespace UbuntoWar
                                     i = 5;
                                     player.setVencedor("Perdeu!");
                                     Console.WriteLine("Você morreu!\n\n");
-                                    jogadores.Add(player);
                                     Console.WriteLine("Deseja reiniciar o jogo? (1-Sim/2-Não)");
                                     comandos.setReiniciar(Console.ReadLine());
                                     switch (comandos.getInicio())
@@ -155,28 +171,12 @@ namespace UbuntoWar
 
                                         default:
                                             Console.WriteLine("Resposta inválida!");
-                                            Console.ReadLine();
+                                            comandos.setReiniciar(Console.ReadLine());
                                             break;
                                     }
                                     break;
                             }
                             Console.Clear();
-                            if (i == 1)
-                            {
-                                player.setPorta1("Passou");
-                            }
-                            if (i == 2)
-                            {
-                                player.setPorta2("Passou");
-                            }
-                            if (i == 3)
-                            {
-                                player.setPorta3("Passou");
-                            }
-                            if (i == 4)
-                            {
-                                player.setPorta4("Passou");
-                            }
                         }
                         // If para contagem de portas passadas pelo jogador, definindo se ele será vitorioso ou perdedor
                         if (count == 5)
@@ -185,15 +185,31 @@ namespace UbuntoWar
                             Console.WriteLine($"Parabéns {player.getNome()} você ganhou!");
                             player.setPorta5("Passou");
                             player.setVencedor("Ganhou!");
-                            jogadores.Add(player);
                             Console.ReadLine();
 
                             Console.Clear();
-                            Console.WriteLine("Obrigado por jogar!");
-                            Console.ReadLine();
-                            comandos.setInicio("Não");
+                            Console.WriteLine("Deseja jogar novamente?\n(1-Sim/2-Não)");
+                            comandos.setInicio(Console.ReadLine());
+                            Console.Clear();
+                            switch (comandos.getInicio())
+                            {
+                                case "1":
+                                    comandos.setInicio("Sim");
+                                    break;
+                                case "2":
+                                    Console.Clear();
+                                    Console.WriteLine("Obrigado por jogar!");
+                                    Console.ReadLine();
+                                    comandos.setInicio("Não");
+
+                                    Console.Clear();
+                                    break;
+                                default:
+                                    Console.WriteLine("Resposta inválida!");
+                                    comandos.setInicio(Console.ReadLine());
+                                    break;
+                            }
                         }
-                        
                         break;
 
                     case "2":
@@ -201,12 +217,21 @@ namespace UbuntoWar
                         Console.WriteLine("Perdedor!\n\n\n\n\n\n\n");
                         comandos.setInicio("Não");
                         break;
-
+                    case "":
+                        Console.WriteLine("Resposta inválida!");
+                        break;
                     default:
                         Console.WriteLine("Resposta inválida!");
                         break;
                 }
-            } while (comandos.getInicio() != "Não");
+                jogadores.Add(player);
+                jogador.Add(jogadorAtual, player.getNome() + ", " + player.getIdade() + ", " + player.getSexo());
+            };
+
+            foreach (object i in jogador)
+            {
+                Console.WriteLine("Até mais" + i + "!\nConfira a tabela de pontuação no excel...\n\n\n");
+            }
 
             // Dependencia Microsoft Excel utilizada
             Microsoft.Office.Interop.Excel.Application app = new Microsoft.Office.Interop.Excel.Application();
@@ -226,53 +251,52 @@ namespace UbuntoWar
             ws.Cells[1, 8] = "Porta 5";
             ws.Cells[1, 9] = "Ganhador";
 
-
-            jogadores.ForEach(jogador =>
+            jogadores.ForEach(export =>
             {
 
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getNome();
+                    ws.Cells[linha, coluna] = export.getNome();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getIdade();
+                    ws.Cells[linha, coluna] = export.getIdade();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getSexo();
+                    ws.Cells[linha, coluna] = export.getSexo();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getPorta1();
+                    ws.Cells[linha, coluna] = export.getPorta1();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getPorta2();
+                    ws.Cells[linha, coluna] = export.getPorta2();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getPorta3();
+                    ws.Cells[linha, coluna] = export.getPorta3();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getPorta4();
+                    ws.Cells[linha, coluna] = export.getPorta4();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getPorta5();
+                    ws.Cells[linha, coluna] = export.getPorta5();
                     coluna++;
                 }
                 for (int i = 0; i < 1; i++)
                 {
-                    ws.Cells[linha, coluna] = jogador.getVencedor();
+                    ws.Cells[linha, coluna] = export.getVencedor();
                     coluna++;
                 }
                 linha++;

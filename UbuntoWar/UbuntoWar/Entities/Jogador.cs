@@ -19,7 +19,15 @@ namespace UbuntoWar.Entities
 
         public void setIdade(string idade)
         {
-            Idade = idade;
+            if(idade == string.Empty)
+            {
+                Idade = "Não informado";
+            }
+            else
+            {
+                Idade = idade;
+
+            }
         }
 
         public string getIdade()
